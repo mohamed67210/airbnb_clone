@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header() {
   return (
-    <header className='stickey top-0 z-50 grid grid-cols-3 h-20 bg-white shadow-md p-5 md:px-10'>
+    <header className='stickey top-0 z-50 grid grid-cols-3 gap-3 h-20 bg-white p-5 md:px-10'>
         {/* left  */}
         <div className='relative flex items-center h-10 cursor-pointer my-auto'>
             <Image src="https://links.papareact.com/qd3" 
@@ -23,10 +23,10 @@ function Header() {
         </div>
         {/* right  */}
         <div className='flex items-center space-x-4 justify-end'>
-            <p className='hidden md:inline'>become a host</p>
+            <button className='hidden md:inline hover:bg-gray-100 p-4 rounded-full'>become a host</button>
             <FontAwesomeIcon icon={faGlobe} className=' md:inline-flex h-8 w-8 p-2 rounded-full text-white bg-red-700 cursor-pointer md:mx-2'/>
-            <div className='flex items-center p-2 border-2 rounded-xl'>
-                <FontAwesomeIcon icon={faBars} className=' md:inline-flex h-8 w-8 p-2 rounded-full text-white bg-red-700 cursor-pointer md:mx-2'/>
+            <div className='flex items-center p-1 border-2 rounded-xl hover:shadow-lg cursor-pointer'>
+                <FontAwesomeIcon icon={faBars} className=' md:inline-flex h-8 w-8 p-2 cursor-pointer md:mx-2'/>
                 <FontAwesomeIcon icon={faUser} className=' md:inline-flex h-8 w-8 p-2 rounded-full text-white bg-red-700 cursor-pointer md:mx-2'/>
             </div>
         </div>
