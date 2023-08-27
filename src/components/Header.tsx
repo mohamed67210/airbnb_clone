@@ -23,7 +23,7 @@ function Header() {
         </div>
         {/* right  */}
         <div className='flex items-center space-x-4 justify-end'>
-            <button className='hidden md:inline hover:bg-gray-100 p-4 rounded-full'>become a host</button>
+            <button className='hidden md:inline hover:bg-gray-100 p-4 rounded-full text-sm'>Mettre mon logement sur Airbnb</button>
             <FontAwesomeIcon icon={faGlobe} className=' md:inline-flex h-8 w-8 p-2 rounded-full text-white bg-red-700 cursor-pointer md:mx-2'/>
             <div className='flex items-center p-1 border-2 rounded-xl hover:shadow-lg cursor-pointer'>
                 <FontAwesomeIcon icon={faBars} className=' md:inline-flex h-8 w-8 p-2 cursor-pointer md:mx-2'/>

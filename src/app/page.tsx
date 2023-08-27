@@ -22,7 +22,7 @@ export default async function Home({}) {
       {/* banner */}
 
       <main>
-        <section className="max-w-7xl mx-auto h-4 flex flex-wrap gap-y-1 gap-x-8">
+        <section className="max-w-7xl mx-auto h-4 flex flex-wrap gap-y-1 gap-x-8 justify-center items-center">
           {/* put some data from server for card informations - APIendpoint */}
           {accommodations.map((accomodation) => (
           <MediumCard img={accomodation.image} title={accomodation.name} price={accomodation.price} location={accomodation.location} />

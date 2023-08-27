@@ -22,10 +22,10 @@ const accommodations = [
       },
       {
         id: 4,
-        name: 'Maison avec piscine',
-        location: 'Barcelone, Centre',
+        name: 'Appartement avec vue',
+        location: 'Paris, Centre',
         price: 299,
-        image:"https://a0.muscache.com/im/pictures/1b46a006-379f-413f-a154-9551f6a30798.jpg?im_w=720",
+        image:"https://a0.muscache.com/im/pictures/miso/Hosting-920279420557707283/original/fb8ff4f8-3615-44c9-82bb-0393d5bb5ccf.jpeg?im_w=720",
       },
       {
         id: 5,
@@ -43,10 +43,10 @@ const accommodations = [
       },
       {
         id: 7,
-        name: 'Maison avec piscine',
+        name: 'Appartement vue sur mer',
         location: 'Marseille, Centre',
         price: 150,
-        image:"https://a0.muscache.com/im/pictures/4acb4282-ea25-48a5-a131-705d5361b44b.jpg?im_w=720",
+        image:"https://a0.muscache.com/im/pictures/miso/Hosting-23698311/original/0a3e26fd-ca9d-462d-80af-ecbd0df54b45.jpeg?im_w=720",
       },
       {
         id: 8,
