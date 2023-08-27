@@ -3,32 +3,25 @@ import MediumCard from "@/components/MediumCard";
 import Nav from "@/components/Nav";
 import Image from "next/image";
 import accommodations from "./data";
-
-async function getData() {
-  const res = await fetch('https://api-pokemon-fr.vercel.app/api/v1/pokemon/tyranocif')
-  const data = await res.json()
-  return data
-}
+import LargeCard from "@/components/LargeCard";
 
 export default async function Home({}) {
-  const data = await getData()
-  console.log(accommodations)
   return (
     
     <div>
       {/* header */}
       <Header />
       <Nav/>
-      {/* banner */}
-
-      <main>
-        <section className="max-w-7xl mx-auto h-4 flex flex-wrap gap-y-1 gap-x-8 justify-center items-center">
-          {/* put some data from server for card informations - APIendpoint */}
+      <main className="flex flex-col">
+        {/* afficher les locations */}
+        <section className="max-w-7xl mx-auto flex flex-wrap gap-y-1 gap-x-8 justify-center items-center">
           {accommodations.map((accomodation) => (
           <MediumCard img={accomodation.image} title={accomodation.name} price={accomodation.price} location={accomodation.location} />
           ))}
-          {/* <MediumCard img={data.sprites.regular} title={data.name.fr} /> */}
         </section>
+
+        <LargeCard img="https://images.unsplash.com/photo-1586234004696-d70537fa5aea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3008&q=80"
+        description="Wishlists By Airbnb" title="The Greates Outdoors" button="Get Inspired"/>
       </main>
       
 

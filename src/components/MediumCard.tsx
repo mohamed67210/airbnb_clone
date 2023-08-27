@@ -2,8 +2,14 @@ import Image from 'next/image'
 import React from 'react'
 import {faHeart} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+interface MediumCardProps {
+    img: string;
+    title: string;
+    price: number;
+    location: string;
+  }
 
-function MediumCard({img,title,price,location}) {
+function MediumCard({img,title,price,location}:MediumCardProps) {
   return (
     <div className='flex flex-col gap-2 mt-10 w-72 h-96 cursor-pointer'>
         <div className='relative w-full h-4/6'>
