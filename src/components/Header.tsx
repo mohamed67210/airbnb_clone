@@ -2,12 +2,30 @@
 import Image from 'next/image'
 import {faSearch,faGlobe,faBars,faUser} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { useState } from 'react';
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { DateRangePicker } from 'react-date-range';
+import { log } from 'console';
 
 
 function Header() {
     const [searchInput,setSearchInput] = useState('');
+    const [startDate,setStartDate] = useState(new Date());
+    const [endDate,setEndDate] = useState("");
+    const handleSelect = (ranges: { selection: { startDate: Date, endDate: string } }) => {
+        console.log(ranges);
+        
+        setStartDate(ranges.selection.startDate);
+        setEndDate(ranges.selection.endDate);
+    }
+
+    const selectionRanger ={
+        startDate:startDate,
+        endDate:endDate,
+        key:"selection"
+    }
+    
   return (
     <header className='sticky top-0 z-50 grid grid-cols-3 gap-3 p-5 md:px-10 bg-white '>
         {/* left  */}
@@ -23,6 +41,7 @@ function Header() {
         <div className='relative flex items-center md:border-2 rounded-full py-2 md:shadow-sm   my-auto'>
             <input
             value={searchInput}
+            onChange={(e)=>setSearchInput(e.target.value)}
             className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-500' 
             type="text" 
             placeholder='Start your search' />
@@ -38,6 +57,19 @@ function Header() {
                 <FontAwesomeIcon icon={faUser} className=' md:inline-flex  p-2 rounded-full text-white bg-red-700 cursor-pointer md:mx-2'/>
             </div>
         </div>
+        {searchInput && 
+        <div className='flex flex-col col-span-3 mx-auto'>
+            <DateRangePicker 
+            ranges={[selectionRanger]}
+            // date minimum qu'on peut choisir
+            minDate={new Date()}
+            // couleur de la date selectionnée
+            rangeColors={["#FF5A5F"]}
+            onChange={handleSelect}
+            />
+        </div>
+        }
+        
     </header>
   )
 }
