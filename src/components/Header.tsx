@@ -25,6 +25,9 @@ function Header() {
         endDate:endDate,
         key:"selection"
     }
+    function resetSearInput(){
+        setSearchInput('');
+    }
     
   return (
     <header className='sticky top-0 z-50 grid grid-cols-3 gap-3 p-5 md:px-10 bg-white '>
@@ -75,8 +78,8 @@ function Header() {
                  onChange={(e) => setGuestNumber(e.target.value)} />
             </div>
             <div className='flex justify-around p-2'>
-                <button>Chercher</button>
-                <button className=' text-red-500'>Annuler</button>
+                <button onClick={resetSearInput}>Annuler</button>
+                <button className=' text-red-500'>Chercher</button>
 
             </div>
         </div>
