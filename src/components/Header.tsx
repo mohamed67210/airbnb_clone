@@ -11,11 +11,11 @@ import { log } from 'console';
 
 function Header() {
     const [searchInput,setSearchInput] = useState('');
+    const [GuestNumber,setGuestNumber] = useState(1);
     const [startDate,setStartDate] = useState(new Date());
     const [endDate,setEndDate] = useState("");
     const handleSelect = (ranges: { selection: { startDate: Date, endDate: string } }) => {
         console.log(ranges);
-        
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     }
@@ -67,7 +67,21 @@ function Header() {
             rangeColors={["#FF5A5F"]}
             onChange={handleSelect}
             />
+            <div className='flex flex-row justify-between items-center border-b-2 px-2'>
+                <h1 className='text-2xl font-semibold '>Nombre des voyageurs</h1>
+                <FontAwesomeIcon icon={faUser}/>
+                <input className='w-12 pl-2 outline-none text-red-500' type="number" min={1}
+                 value={GuestNumber}
+                 onChange={(e) => setGuestNumber(e.target.value)} />
+            </div>
+            <div className='flex justify-around p-2'>
+                <button>Chercher</button>
+                <button className=' text-red-500'>Annuler</button>
+
+            </div>
         </div>
+        
+        
         }
         
     </header>
