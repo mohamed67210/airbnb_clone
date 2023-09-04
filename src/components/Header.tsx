@@ -9,8 +9,12 @@ import { DateRangePicker, RangeKeyDict } from 'react-date-range';
 import { log } from 'console';
 import { useRouter } from 'next/navigation';
 
+interface HeaderProps{
+    placeholder:string,
+}
 
-function Header() {
+
+function Header({placeholder}:HeaderProps) {
     const [searchInput,setSearchInput] = useState('');
     const [GuestNumber,setGuestNumber] = useState('1');
     const [startDate,setStartDate] = useState(new Date());
@@ -19,9 +23,8 @@ function Header() {
     const search =()=>{
         setSearchInput("");
         if (typeof searchInput === "string") {
-            router.push(`/search?location=${searchInput}&startDate=${startDate}&endDate=${endDate}&nbPersonne=${GuestNumber}`)
+            router.push(`/search?location=${searchInput}&startDate=${(startDate).toISOString()}&endDate=${(endDate).toISOString()}&nbPersonne=${GuestNumber}`)
         }
-        
     }
     const handleSelect = (ranges: { selection: { startDate: Date, endDate: Date } }) => {
         console.log(ranges);
@@ -62,7 +65,7 @@ function Header() {
             onChange={(e)=>setSearchInput(e.target.value)}
             className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-500' 
             type="text" 
-            placeholder='Start your search' />
+            placeholder={placeholder || 'Start your search'} />
             {/* <button className=' bg-red-800 text-white p-2 cursor-pointer'>Search</button> */}
             <FontAwesomeIcon icon={faSearch} className='absolute bg-red-700 rounded-full p-1 text-white right-2 cursor-pointer'/>
         </div>

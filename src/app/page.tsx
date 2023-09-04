@@ -10,7 +10,7 @@ export default async function Home({}) {
     
     <div>
       {/* header */}
-      <Header />
+      <Header placeholder={""} />
       <Nav/>
       <main className="flex flex-col">
         {/* afficher les locations */}
