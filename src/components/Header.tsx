@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from 'react';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import { DateRangePicker } from 'react-date-range';
+import { DateRangePicker, RangeKeyDict } from 'react-date-range';
 import { log } from 'console';
 import { useRouter } from 'next/navigation';
 
@@ -21,6 +21,12 @@ function Header() {
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     }
+    const dateRangeHandler = (ranges: RangeKeyDict) => {
+        const startDate = ranges.selection.startDate || new Date();
+        const endDate = ranges.selection.endDate || new Date();
+        setStartDate(startDate);
+        setEndDate(endDate);
+    };
     const selectionRanger ={
         startDate:startDate,
         endDate:endDate,
@@ -70,7 +76,7 @@ function Header() {
             minDate={new Date()}
             // couleur de la date selectionnée
             rangeColors={["#FF5A5F"]}
-            onChange={handleSelect}
+            onChange={dateRangeHandler}
             />
             <div className='flex flex-row justify-between items-center border-b-2 px-2'>
                 <h1 className='text-2xl font-semibold '>Nombre des voyageurs</h1>
