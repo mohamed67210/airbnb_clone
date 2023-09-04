@@ -7,6 +7,7 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import { log } from 'console';
+import { useRouter } from 'next/navigation';
 
 
 function Header() {
@@ -14,12 +15,12 @@ function Header() {
     const [GuestNumber,setGuestNumber] = useState(1);
     const [startDate,setStartDate] = useState(new Date());
     const [endDate,setEndDate] = useState("");
+    const router = useRouter()
     const handleSelect = (ranges: { selection: { startDate: Date, endDate: string } }) => {
         console.log(ranges);
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     }
-
     const selectionRanger ={
         startDate:startDate,
         endDate:endDate,
@@ -38,6 +39,7 @@ function Header() {
             layout='fill'
             objectFit='contain'
             objectPosition='left'
+            onClick={()=>{router.push('/')}}
             />
         </div>
         {/* middle  */}
@@ -79,7 +81,10 @@ function Header() {
             </div>
             <div className='flex justify-around p-2'>
                 <button onClick={resetSearInput}>Annuler</button>
-                <button className=' text-red-500'>Chercher</button>
+                <button 
+                className=' text-red-500'
+                onClick={()=>{router.push("/search")}}>
+                    Chercher</button>
 
             </div>
         </div>

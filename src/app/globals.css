@@ -8,6 +8,12 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+@layer components {
+  .button {
+    @apply border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transition transform duration-100 p-2
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
