@@ -18,7 +18,7 @@ function Header() {
     const router = useRouter()
     const search =()=>{
         setSearchInput("");
-        if (searchInput === "string") {
+        if (typeof searchInput === "string") {
             router.push(`/search?location=${searchInput}&startDate=${startDate}&endDate=${endDate}&nbPersonne=${GuestNumber}`)
         }
         
