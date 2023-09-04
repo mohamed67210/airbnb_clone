@@ -16,6 +16,13 @@ function Header() {
     const [startDate,setStartDate] = useState(new Date());
     const [endDate,setEndDate] = useState(new Date());
     const router = useRouter()
+    const search =()=>{
+        setSearchInput("");
+        if (searchInput === "string") {
+            router.push(`/search?location=${searchInput}&startDate=${startDate}&endDate=${endDate}&nbPersonne=${GuestNumber}`)
+        }
+        
+    }
     const handleSelect = (ranges: { selection: { startDate: Date, endDate: Date } }) => {
         console.log(ranges);
         setStartDate(ranges.selection.startDate);
@@ -89,8 +96,7 @@ function Header() {
                 <button onClick={resetSearInput}>Annuler</button>
                 <button 
                 className=' text-red-500'
-                onClick={()=>{router.push("/search")}}>
-                    Chercher</button>
+                onClick={search}>Chercher</button>
 
             </div>
         </div>
