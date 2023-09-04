@@ -12,11 +12,11 @@ import { useRouter } from 'next/navigation';
 
 function Header() {
     const [searchInput,setSearchInput] = useState('');
-    const [GuestNumber,setGuestNumber] = useState(1);
+    const [GuestNumber,setGuestNumber] = useState('1');
     const [startDate,setStartDate] = useState(new Date());
-    const [endDate,setEndDate] = useState("");
+    const [endDate,setEndDate] = useState(new Date());
     const router = useRouter()
-    const handleSelect = (ranges: { selection: { startDate: Date, endDate: string } }) => {
+    const handleSelect = (ranges: { selection: { startDate: Date, endDate: Date } }) => {
         console.log(ranges);
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
