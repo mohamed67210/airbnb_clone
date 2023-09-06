@@ -3,10 +3,26 @@ import Header from "@/components/Header"
 import { log } from "console";
 import { useSearchParams} from "next/navigation"
 import { format } from "date-fns";
+import { type } from "os";
+import InfoCard from "@/components/InfoCard";
 
-function Search() {
+async function getData() {
+  const res = await fetch('https://test-e9746-default-rtdb.firebaseio.com/airbnb/search.json')
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+ 
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return res.json()
+}
+
+async function Search() {
   const searchParams = useSearchParams();
-  
+  const data = await getData()
+  console.log(getData())
   // console.log(searchParams)
   const startDate = searchParams.get('startDate');
   const endDate = searchParams.get('endDate');
@@ -30,6 +46,12 @@ function Search() {
             <li className="button">Autres</li>
             </ul>
           </div>
+          <div className="flex flex-col">
+            {data.map(item =>(
+            <InfoCard img={item.img} location={item.location} price={item.price} description={item.description} title={item.title} star={item.star}/>
+          ))}
+          </div>
+          
         </section>
       </main>
       {/* <Nav/> */}
@@ -38,3 +60,4 @@ function Search() {
 }
 
 export default Search
+
