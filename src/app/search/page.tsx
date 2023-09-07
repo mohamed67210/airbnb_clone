@@ -5,6 +5,7 @@ import { useSearchParams} from "next/navigation"
 import { format } from "date-fns";
 import { type } from "os";
 import InfoCard from "@/components/InfoCard";
+import Footer from "@/components/Footer";
 
 interface itemProps{
     img: string,
@@ -62,6 +63,7 @@ async function Search() {
           </div>
           
         </section>
+        <Footer/>
       </main>
       {/* <Nav/> */}
     </div>
