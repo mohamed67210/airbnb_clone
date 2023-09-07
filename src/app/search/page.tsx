@@ -63,9 +63,9 @@ async function Search() {
           </div>
           
         </section>
-        <Footer/>
+        
       </main>
-      {/* <Nav/> */}
+      <Footer/>
     </div>
   )
 }
