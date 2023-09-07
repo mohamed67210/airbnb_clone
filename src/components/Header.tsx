@@ -59,7 +59,7 @@ function Header({placeholder}:HeaderProps) {
             />
         </div>
         {/* middle  */}
-        <div className='relative flex items-center md:border-2 rounded-full py-2 md:shadow-sm md:w-full my-auto'>
+        <div className='relative shadow-lg flex items-center md:border-2 rounded-full py-2 md:shadow-sm md:w-full my-auto'>
             <input
             value={searchInput}
             onChange={(e)=>setSearchInput(e.target.value)}

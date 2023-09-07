@@ -4,7 +4,7 @@ import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
  
 function Nav() {
   return (
-    <div className='sticky top-20 flex items-center justify-center gap-8 p-8 shadow-md bg-white z-40'>
+    <div className='sticky top-20 flex items-center justify-center gap-8 p-8 shadow-md bg-white z-40 h-7'>
         <article className='flex flex-col items-center justify-center gap-3 text-gray-500 cursor-pointer'>
             <FontAwesomeIcon icon={faFire} className='h-5 w-5 md:h-8 md:w-8' />
             <small>Tendance</small>
