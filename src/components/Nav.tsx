@@ -7,23 +7,23 @@ function Nav() {
     <div className='sticky top-20 flex items-center justify-center gap-8 p-8 shadow-md bg-white z-40'>
         <article className='flex flex-col items-center justify-center gap-3 text-gray-500 cursor-pointer'>
             <FontAwesomeIcon icon={faFire} className='h-5 w-5 md:h-8 md:w-8' />
-            <p>Tendance</p>
+            <small>Tendance</small>
         </article>
         <article className='flex flex-col items-center justify-center gap-3 text-gray-500 cursor-pointer'>
             <FontAwesomeIcon icon={faWaterLadder} className='h-5 w-5 md:h-8 md:w-8' />
-            <p>Piscine</p>
+            <small>Piscine</small>
         </article>
         <article className='flex flex-col items-center justify-center gap-3 text-gray-500 cursor-pointer'>
             <FontAwesomeIcon icon={faFontAwesome} className='h-5 w-5 md:h-8 md:w-8' />
-            <p>Chateau</p>
+            <small>Chateau</small>
         </article>
         <article className='flex flex-col items-center justify-center gap-3 text-gray-500 cursor-pointer'>
             <FontAwesomeIcon icon={faWater} className='h-5 w-5 md:h-8 md:w-8' />
-            <p>au bord de la mer</p>
+            <small>au bord de la mer</small>
         </article>
         <article className='flex flex-col items-center justify-center gap-3 text-gray-500 cursor-pointer'>
             <FontAwesomeIcon icon={faMugHot} className='h-5 w-5 md:h-8 md:w-8' />
-            <p>Chambre d'hote</p>
+            <small>Chambre d'hote</small>
         </article>
     </div>
   )
