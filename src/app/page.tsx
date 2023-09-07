@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Image from "next/image";
 import accommodations from "./data";
 import LargeCard from "@/components/LargeCard";
+import Footer from "@/components/Footer";
 
 export default async function Home({}) {
   return (
@@ -23,7 +24,7 @@ export default async function Home({}) {
         <LargeCard img="https://images.unsplash.com/photo-1586234004696-d70537fa5aea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3008&q=80"
         description="Wishlists By Airbnb" title="The Greates Outdoors" button="Get Inspired"/>
       </main>
-      
+      <Footer/>
 
     </div>
   )
