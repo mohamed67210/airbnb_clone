@@ -15,9 +15,9 @@ interface Props{
 
 function InfoCard({img,location,price,description,title,star}:Props) {
   return (
-    <article className='flex flex-row'>
+    <article className='flex py-7 px-2 border-b cursor-pointer hover:opacity-80 hover:shadow-lg pr-4 transition duration-200 ease-out first:border-t'>
         <div className='relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0'>
-            <Image src={img} alt='image' layout='fill' objectFit='cover'/>
+            <Image src={img} alt='image' layout='fill' objectFit='cover' className=' rounded-2xl'/>
         </div>
         <div className='flex flex-col flex-grow pl-6'>
             <div className='flex flex-row justify-between'>
@@ -28,9 +28,9 @@ function InfoCard({img,location,price,description,title,star}:Props) {
                 <h2 className=' font-semibold '>{title}</h2>
                 <p className=' text-gray-600'>{description}</p>
             </div>
-            <div className='flex flex-row justify-between'>
-            <p className='flex items-center'><FontAwesomeIcon icon={faStar} className=' text-red-400'/>{star}</p>
-            <p>{price}</p>
+            <div className='flex justify-between items-end pt-10 '>
+                <p className='flex items-center'><FontAwesomeIcon icon={faStar} className=' text-red-400'/>{star}</p>
+                <p className=' text-lg font-semibold'>{price}</p>
             </div>
         </div>
     </article>

@@ -47,7 +47,7 @@ async function Search() {
             </ul>
           </div>
           <div className="flex flex-col">
-            {data.map(item =>(
+            {data.map((item: { img: string; location: string; price: number; description: string; title: string; star: number; }) =>(
             <InfoCard img={item.img} location={item.location} price={item.price} description={item.description} title={item.title} star={item.star}/>
           ))}
           </div>
