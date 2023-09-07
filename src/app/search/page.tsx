@@ -40,13 +40,12 @@ async function Search() {
   const formattedEndDate = format(new Date(endDate as string),"dd MMMM yyyy");
   const range =`du ${formattedStartDate}-${formattedEndDate}`
 
-
   return (
     <div>
       <Header placeholder={`${searchParams.get('location')} | ${range} | ${searchParams.get('nbPersonne')} `}/>
       <main className="flex p-2">
         <section className="flex-grow pt-14 px-6">
-          <p className="text-sm text-gray-600">Resultat : 185 Logements trouvé pour {searchParams.get('nbPersonne')} personnes {range}</p>
+          <p className="text-sm text-gray-600">Resultat : Logement(s) trouvé pour {searchParams.get('nbPersonne')} personnes {range}</p>
           <h1 className="text-lg font-bold mb-6">Logements a {searchParams.get('location')}</h1>
           <div className="">
             <ul className="hidden lg:inline-flex mb-5 space-x-3">
@@ -58,7 +57,7 @@ async function Search() {
           </div>
           <div className="flex flex-col">
             {data.filter((item:itemProps) => searchParams.get('location') != null && item.location.includes(searchParams.get('location'))).map((item: { img: string; location: string; price: number; description: string; title: string; star: number; }) =>(
-            <InfoCard img={item.img} location={item.location} price={item.price} description={item.description} title={item.title} star={item.star}/>
+            <InfoCard key={item.img} img={item.img} location={item.location} price={item.price} description={item.description} title={item.title} star={item.star}/>
           ))}
           </div>
           
