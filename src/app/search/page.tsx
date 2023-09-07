@@ -6,6 +6,15 @@ import { format } from "date-fns";
 import { type } from "os";
 import InfoCard from "@/components/InfoCard";
 
+interface itemProps{
+    img: string,
+    location: string,
+    price: number,
+    description: string,
+    title: string,
+    star: number; 
+}
+
 async function getData() {
   const res = await fetch('https://test-e9746-default-rtdb.firebaseio.com/airbnb/search.json')
   // The return value is *not* serialized
@@ -47,7 +56,7 @@ async function Search() {
             </ul>
           </div>
           <div className="flex flex-col">
-            {data.map((item: { img: string; location: string; price: number; description: string; title: string; star: number; }) =>(
+            {data.filter((item:itemProps) => searchParams.get('location') != null && item.location.includes(searchParams.get('location'))).map((item: { img: string; location: string; price: number; description: string; title: string; star: number; }) =>(
             <InfoCard img={item.img} location={item.location} price={item.price} description={item.description} title={item.title} star={item.star}/>
           ))}
           </div>
