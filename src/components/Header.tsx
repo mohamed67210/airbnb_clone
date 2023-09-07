@@ -27,7 +27,7 @@ function Header({placeholder}:HeaderProps) {
         }
     }
     const handleSelect = (ranges: { selection: { startDate: Date, endDate: Date } }) => {
-        console.log(ranges);
+        // console.log(ranges);
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     }
@@ -47,9 +47,9 @@ function Header({placeholder}:HeaderProps) {
     }
     
   return (
-    <header className='sticky top-0 z-50 grid grid-cols-3 gap-3 p-5 md:px-10 bg-white '>
+    <header className='sticky top-0 z-50 md:grid grid-cols-3 gap-3 p-5 md:px-10 bg-white '>
         {/* left  */}
-        <div className='relative flex items-center h-10 cursor-pointer my-auto'>
+        <div className='relative items-center h-10 cursor-pointer my-auto hidden md:flex '>
             <Image src="https://links.papareact.com/qd3" 
             alt='image' 
             layout='fill'
@@ -59,7 +59,7 @@ function Header({placeholder}:HeaderProps) {
             />
         </div>
         {/* middle  */}
-        <div className='relative flex items-center md:border-2 rounded-full py-2 md:shadow-sm   my-auto'>
+        <div className='relative flex items-center md:border-2 rounded-full py-2 md:shadow-sm md:w-full my-auto'>
             <input
             value={searchInput}
             onChange={(e)=>setSearchInput(e.target.value)}
@@ -70,7 +70,7 @@ function Header({placeholder}:HeaderProps) {
             <FontAwesomeIcon icon={faSearch} className='absolute bg-red-700 rounded-full p-1 text-white right-2 cursor-pointer'/>
         </div>
         {/* right  */}
-        <div className='flex items-center space-x-4 h-16 justify-end'>
+        <div className='hidden md:flex items-center space-x-4 h-16 justify-end'>
             <button className='hidden md:inline hover:bg-gray-100 p-2 rounded-full text-sm sm:text-xs'>Mettre mon logement sur Airbnb</button>
             <FontAwesomeIcon icon={faGlobe} className=' md:inline-flex p-2 rounded-full text-white bg-red-700 cursor-pointer md:mx-2'/>
             <div className='flex items-center p-1 border-2 rounded-xl hover:shadow-lg cursor-pointer'>
