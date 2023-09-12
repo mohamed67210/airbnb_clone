@@ -41,7 +41,7 @@ async function Search() {
   const range =`du ${formattedStartDate}-${formattedEndDate}`
 
   return (
-    <div>
+    <div className=" h-screen">
       <Header placeholder={`${searchParams.get('location')} | ${range} | ${searchParams.get('nbPersonne')} `}/>
       <main className="flex p-2">
         <section className="flex-grow pt-14 px-6">

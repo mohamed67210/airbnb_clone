@@ -47,7 +47,7 @@ function Header({placeholder}:HeaderProps) {
     }
     
   return (
-    <header className='sticky top-0 z-50 md:grid grid-cols-3 gap-3 p-5 md:px-10 bg-white '>
+    <header className='sticky top-0 z-40 md:grid grid-cols-3 gap-3 p-5 md:px-10 bg-white '>
         {/* left  */}
         <div className='relative items-center h-10 cursor-pointer my-auto hidden md:flex '>
             <Image src="https://links.papareact.com/qd3" 
